@@ -1,0 +1,6 @@
+from new_packages import new_package_files
+from new_packages.seond_new_packages import second_file_packages
+
+new_package_files.first_package_file()
+
+second_file_packages.secind_new_file()
