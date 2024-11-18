@@ -26,33 +26,47 @@ class BankAccount:
     def close_account(self):
         self.is_active = False
         return f"{self.account_number} is inactive."
+#create a saving account
+class SavingAccount(BankAccount):
+    def __init__(self):
+        self.interest_rate = 2.5
+        self.min_balance = 500
+
+    def applt_interest(self):
+        self.balance = self.balance * self.interest_rate
+
+        return f"We added Interest Rate also Total Amount Avilabile: {self.balance}"
+    
+    def withdraw(self, amount):
+        if amount <= self.balance and self.balance > self.min_balance:
+
+    
 
 #create a object of BankAccount    
-account_1 = BankAccount()
-#ask the necessary detials from user to verify the account.
-account_1.account_holder = input("Enter the Account Holder Name: ")
-account_1.account_number = int(input("Enter the Account Number: "))
-account_1.password = input("Enter the Password: ")
+# account_1 = BankAccount()
+# #ask the necessary detials from user to verify the account.
+# account_1.account_holder = input("Enter the Account Holder Name: ")
+# account_1.account_number = int(input("Enter the Account Number: "))
+# account_1.password = input("Enter the Password: ")
 
 
-loop = True
-while loop:
-    #Asking user where deposit, withdraw, check balance or close account
-    ask_users = input("What Operation Need... deposit, withdraw, check balance or close account: ").lower()
+# loop = True
+# while loop:
+#     #Asking user where deposit, withdraw, check balance or close account
+#     ask_users = input("What Operation Need... deposit, withdraw, check balance or close account: ").lower()
 
-    if ask_users == "deposit":
-        print(account_1.deposit(float(input("Enter the deposit Money: "))))
-    elif ask_users == "withdraw":
-        print(account_1.withdraw(float(input("Enter the withdraw Money: "))))
-    elif ask_users == "check balance":
-        print(account_1.check_balance())
-    elif ask_users == "close account":
-        print(account_1.close_account())
-    else:
-        print("Invalid Option...")
+#     if ask_users == "deposit":
+#         print(account_1.deposit(float(input("Enter the deposit Money: "))))
+#     elif ask_users == "withdraw":
+#         print(account_1.withdraw(float(input("Enter the withdraw Money: "))))
+#     elif ask_users == "check balance":
+#         print(account_1.check_balance())
+#     elif ask_users == "close account":
+#         print(account_1.close_account())
+#     else:
+#         print("Invalid Option...")
     
-    #ask the user need to continue or not
-    ask_continue = input("Enter Yes if want Continue else Enter No...").lower()
-    if ask_continue == "no":
-        loop = False   #exit the loop bcz it make the loop false.
-        
+#     #ask the user need to continue or not
+#     ask_continue = input("Enter Yes if want Continue else Enter No...").lower()
+#     if ask_continue == "no":
+#         loop = False   #exit the loop bcz it make the loop false.
